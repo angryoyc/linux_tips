@@ -76,7 +76,7 @@ sudo mount /dev/fs/vl1 /media/vl1
 blkid  /dev/fs/vl1
 ```
 
-Добавим новый том в fstab
+Добавим новый том в */etc/fstab*
 ```
 echo "UUID=d84895b8-93f6-4b40-ab9e-b6f179a13ef5 /media/vl1      ext4    auto,rw,noexec,noatime        0       0" >> /etc/fstab
 ```
@@ -92,10 +92,10 @@ lvreduce --size 120G /dev/fs/tmp
 lvextend --size 120G /dev/fs/tmp
 ```
 
-можно использовать lvresize
+можно использовать **lvresize**
 
 
-монтируем всё на основе fstab
+монтируем всё на основе */etc/fstab*
 ```
 mount -a
 ```

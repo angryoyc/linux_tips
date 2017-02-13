@@ -1,5 +1,5 @@
 # linux_tips
-Collection of short tips for linux beginers
+Collection of short tips for linux beginners
 
-- [GIT](https://github.com/angryoyc/linux_tips/blob/master/tips/GIT.md)
-- [LVM2](https://github.com/angryoyc/linux_tips/blob/master/tips/LVM2.md)
+- [GIT](tips/GIT.md)
+- [LVM2](tips/LVM2.md)
