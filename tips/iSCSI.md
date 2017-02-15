@@ -27,20 +27,23 @@ systemctl restart iscsitarget.service
 
 
 # INITIATOR (client)
+
+Установка:
 ```
 apt-get install open-iscsi
 ```
 
 #### /etc/iscsi/iscsid.conf
-> ...
-> node.startup = automatic
-> ...
-> node.session.auth.username = serg
-> node.session.auth.password = jlyfrj
-> ...
-> discovery.sendtargets.auth.username = user
-> discovery.sendtargets.auth.password = jlyfrj
-
+```
+...
+node.startup = automatic
+...
+node.session.auth.username = serg
+node.session.auth.password = jlyfrj;t
+...
+discovery.sendtargets.auth.username = serg
+discovery.sendtargets.auth.password = jlyfrj;t
+```
 
 перезапуск сервиса:
 ```
