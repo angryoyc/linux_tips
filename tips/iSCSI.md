@@ -17,7 +17,7 @@ ISCSITARGET_ENABLE=true
  Target iqn.2017-01.com.attava:target00
     Lun 0 Path=/home/serg/iscsi_disks/lun1.img,Type=fileio
     initiator-address 10.1.2.180
-    incominguser serg jlyfrj
+    incominguser serg jgf23
 ```
 
 Lun’ы нумеруются с нуля. Нулевой лун должен присутствовать.
@@ -39,10 +39,10 @@ Lun’ы нумеруются с нуля. Нулевой лун должен п
 node.startup = automatic
 ...
 node.session.auth.username = serg
-node.session.auth.password = jlyfrj;t
+node.session.auth.password = jgf23
 ...
 discovery.sendtargets.auth.username = serg
-discovery.sendtargets.auth.password = jlyfrj;t
+discovery.sendtargets.auth.password = jgf23
 ```
 
 перезапуск сервиса:
