@@ -24,7 +24,7 @@ Lun’ы нумеруются с нуля. Нулевой лун должен п
 ```
 # systemctl restart iscsitarget.service
 ```
-
+---
 
 # INITIATOR (client)
 
