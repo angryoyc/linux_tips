@@ -2,17 +2,17 @@
 
 Установка:
 ```
-apt-get install iscsitarget
+# apt-get install iscsitarget
 ```
 
-`cat /etc/default/iscsitarget`
+##### /etc/default/iscsitarget:
 ```
 ….
 ISCSITARGET_ENABLE=true
 ….
 ```
 
-#### /etc/iet/ietd.conf 
+##### /etc/iet/ietd.conf:
 ```
  Target iqn.2017-01.com.attava:target00
     Lun 0 Path=/home/serg/iscsi_disks/lun1.img,Type=fileio
@@ -22,7 +22,7 @@ ISCSITARGET_ENABLE=true
 
 Lun’ы нумеруются с нуля. Нулевой лун должен присутствовать.
 ```
-systemctl restart iscsitarget.service
+# systemctl restart iscsitarget.service
 ```
 
 
@@ -30,10 +30,10 @@ systemctl restart iscsitarget.service
 
 Установка:
 ```
-apt-get install open-iscsi
+# apt-get install open-iscsi
 ```
 
-#### /etc/iscsi/iscsid.conf
+##### /etc/iscsi/iscsid.conf:
 ```
 ...
 node.startup = automatic
@@ -47,20 +47,20 @@ discovery.sendtargets.auth.password = jlyfrj;t
 
 перезапуск сервиса:
 ```
-systemctl restart open-iscsi
+# systemctl restart open-iscsi
 ```
 
 поиск доступных ресурсов:
 ```
-iscsiadm -m discovery -t st -p 10.1.2.69
+# iscsiadm -m discovery -t st -p 10.1.2.69
 ```
 
 login (подключение к ресурсу, создание блочных устройств)
 ```
-iscsiadm -m node -l -T iqn.2017-01.com.attava:target00
+# iscsiadm -m node -l -T iqn.2017-01.com.attava:target00
 ```
 
 logout (отключение и удаление устройств из /dev/)
 ```
-iscsiadm -m node -u -T iqn.2017-01.com.attava:target00
+# iscsiadm -m node -u -T iqn.2017-01.com.attava:target00
 ```
