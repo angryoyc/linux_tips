@@ -5,7 +5,7 @@
 apt-get install iscsitarget
 ```
 
-#### /etc/default/iscsitarget
+`cat /etc/default/iscsitarget`
 ```
 ….
 ISCSITARGET_ENABLE=true
