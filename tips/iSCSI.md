@@ -1,24 +1,29 @@
 # TARGET (server)
+
+Установка:
 ```
 apt-get install iscsitarget
 ```
 
-### /etc/default/iscsitarget
-> ….
-> ISCSITARGET_ENABLE=true
-> ….
+#### /etc/default/iscsitarget
+```
+….
+ISCSITARGET_ENABLE=true
+….
+```
 
-### /etc/iet/ietd.conf 
-> Target iqn.2017-01.com.attava:target00
->     Lun 0 Path=/home/serg/iscsi_disks/lun1.img,Type=fileio
->     initiator-address 10.1.2.180
->     incominguser serg jlyfrj
-
+#### /etc/iet/ietd.conf 
+```
+ Target iqn.2017-01.com.attava:target00
+    Lun 0 Path=/home/serg/iscsi_disks/lun1.img,Type=fileio
+    initiator-address 10.1.2.180
+    incominguser serg jlyfrj
+```
 
 Lun’ы нумеруются с нуля. Нулевой лун должен присутствовать.
 ```
 systemctl restart iscsitarget.service
-``
+```
 
 
 # INITIATOR (client)
@@ -26,7 +31,7 @@ systemctl restart iscsitarget.service
 apt-get install open-iscsi
 ```
 
-### /etc/iscsi/iscsid.conf
+#### /etc/iscsi/iscsid.conf
 > ...
 > node.startup = automatic
 > ...
@@ -37,12 +42,12 @@ apt-get install open-iscsi
 > discovery.sendtargets.auth.password = jlyfrj
 
 
-перезапуск сервиса
+перезапуск сервиса:
 ```
 systemctl restart open-iscsi
 ```
 
-поиск доступных ресурсов
+поиск доступных ресурсов:
 ```
 iscsiadm -m discovery -t st -p 10.1.2.69
 ```
